@@ -1,918 +1,1380 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+/* =========================================================
+   PRAJINA SHAKYA — PERSONAL WEBSITE
+   ========================================================= */
+
+
+/* ---------- ROOT ---------- */
+
+:root {
+  --bg: #c3c9ae;
+  --bg-deep: #aeb696;
+  --paper: #f4f0e6;
+  --paper-soft: #ebe7da;
+  --ink: #24271f;
+  --muted: #62685a;
+  --line: rgba(36, 39, 31, 0.20);
+  --line-light: rgba(244, 240, 230, 0.28);
+
+  --serif: "Playfair Display", Georgia, serif;
+  --sans: "DM Sans", Arial, sans-serif;
+
+  --page-width: 1180px;
+}
+
+
+/* ---------- RESET ---------- */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
 
-  <title>Prajina Shakya</title>
+img {
+  display: block;
+  width: 100%;
+}
 
-  <meta
-    name="description"
-    content="Personal website of Prajina Shakya — exploring technology, creativity, leadership, and community."
-  >
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+p {
+  max-width: 720px;
+}
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap"
-    rel="stylesheet"
-  >
 
-  <link rel="stylesheet" href="style.css">
-</head>
+/* ---------- HEADER ---------- */
 
-<body>
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 
-  <!-- =========================
-       HERO
-  ========================== -->
+  background: rgba(195, 201, 174, 0.94);
+  backdrop-filter: blur(12px);
 
-  <header class="hero">
+  border-bottom: 1px solid var(--line);
+}
 
-    <div class="hero-inner">
+.nav {
+  width: min(var(--page-width), calc(100% - 80px));
+  min-height: 72px;
+  margin: auto;
 
-      <p class="eyebrow">PERSONAL WEBSITE</p>
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
 
-      <h1>Prajina<br>Shakya</h1>
+.nav-name {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+}
 
-      <p class="hero-tagline">
-        Exploring ideas. Creating things. Finding my path.
-      </p>
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 27px;
+}
 
-      <p class="location">
-        Kathmandu, Nepal
-      </p>
+.nav-links a,
+.nav-contact {
+  position: relative;
 
-    </div>
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  color: var(--muted);
 
-  </header>
+  transition: color 0.2s ease;
+}
 
+.nav-links a::after,
+.nav-contact::after {
+  content: "";
 
-  <main>
+  position: absolute;
+  left: 0;
+  bottom: -5px;
 
-    <!-- =========================
-         INTRODUCTION
-    ========================== -->
+  width: 0;
+  height: 1px;
 
-    <section class="intro section">
+  background: var(--ink);
 
-      <div class="section-number">00</div>
+  transition: width 0.2s ease;
+}
 
-      <div class="section-content">
+.nav-links a:hover,
+.nav-contact:hover {
+  color: var(--ink);
+}
 
-        <p class="intro-text">
-          I’m a curious learner interested in technology, creativity,
-          leadership, and community service. I value learning through
-          experiences beyond the classroom—whether through collaboration,
-          creative projects, developing new skills, or exploring ideas
-          that challenge my perspective.
-        </p>
+.nav-links a:hover::after,
+.nav-contact:hover::after {
+  width: 100%;
+}
 
-        <p class="intro-text">
-          I approach new areas with curiosity and an open mind rather than
-          limiting myself to one direction too early. Through my academic,
-          creative, leadership, and community experiences, I’m developing
-          the skills, perspective, and adaptability that will shape what
-          I pursue next.
-        </p>
+.nav-contact {
+  color: var(--ink);
+}
 
-      </div>
 
-    </section>
+/* ---------- HERO ---------- */
 
+.hero {
+  background: var(--bg);
 
-    <!-- =========================
-         01 ABOUT ME
-    ========================== -->
+  min-height: calc(100vh - 72px);
 
-    <section class="section">
+  display: flex;
+  align-items: center;
 
-      <div class="section-number">01</div>
+  border-bottom: 1px solid var(--line);
+}
 
-      <div class="section-content">
+.hero-inner {
+  width: min(var(--page-width), calc(100% - 80px));
+  margin: auto;
 
-        <h2>About Me</h2>
+  padding: 100px 0 90px;
+}
 
-        <div class="about-grid">
+.hero-label {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  font-weight: 600;
 
-          <div>
+  margin-bottom: 34px;
 
-            <p>
-              I enjoy exploring different ways of learning, creating,
-              and expressing ideas. From visual art and music to technology
-              and practical projects, I value opportunities to turn
-              curiosity into something tangible.
-            </p>
+  color: var(--muted);
+}
 
-            <p>
-              I also enjoy stepping beyond my familiar interests. Some
-              experiences have developed into lasting interests, while
-              others have broadened my perspective and taught me more
-              about how I learn, collaborate, and approach challenges.
-            </p>
+.hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(54px, 8vw, 108px);
+  font-weight: 500;
+  line-height: 0.98;
+  letter-spacing: -0.045em;
 
-            <div class="interest-line">
-              <span>Creative Work</span>
-              <span>Music</span>
-              <span>Technology</span>
-              <span>Learning New Skills</span>
-              <span>Exploring Ideas</span>
-              <span>Working with People</span>
-            </div>
+  max-width: 1000px;
+}
 
-          </div>
+.hero h1 em {
+  font-style: italic;
+  color: #596047;
+}
 
-          <div class="portrait-placeholder">
-            <span>PERSONAL PHOTO</span>
-          </div>
+.hero-bottom {
+  margin-top: 75px;
 
-        </div>
+  display: grid;
+  grid-template-columns: minmax(0, 520px) auto;
+  justify-content: space-between;
+  align-items: end;
 
-      </div>
+  border-top: 1px solid var(--line);
+  padding-top: 22px;
+}
 
-    </section>
+.hero-intro {
+  font-size: 16px;
+  line-height: 1.65;
+  color: #3e4337;
+}
 
+.hero-location {
+  text-align: right;
 
-    <!-- =========================
-         02 ACADEMIC PROFILE
-    ========================== -->
+  font-size: 11px;
+  line-height: 1.6;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 
-    <section class="section">
+  color: var(--muted);
+}
 
-      <div class="section-number">02</div>
 
-      <div class="section-content">
+/* ---------- GENERAL SECTIONS ---------- */
 
-        <h2>Academic Profile</h2>
+.section,
+.intro {
+  width: min(var(--page-width), calc(100% - 80px));
+  margin: auto;
+}
 
-        <div class="academic-grid">
+.section {
+  padding: 115px 0;
+}
 
-          <div class="academic-label">Name</div>
-          <div class="academic-value">Prajina Shakya</div>
+.section-line {
+  border-bottom: 1px solid var(--line);
+}
 
-          <div class="academic-label">Education</div>
-          <div class="academic-value">
-            St. Mary’s Higher Secondary School, Jawalakhel, Lalitpur
-          </div>
+.section-heading {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  align-items: start;
 
-          <div class="academic-label">Level Completed</div>
-          <div class="academic-value">
-            Grade 12 · Class of 2026
-          </div>
+  margin-bottom: 65px;
+}
 
-          <div class="academic-label">Faculty</div>
-          <div class="academic-value">
-            Computer Management —
-            Management Stream with a focus on Computer Science /
-            Information Technology
-          </div>
+.section-number {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--muted);
 
-          <div class="academic-label">Current Interests</div>
-          <div class="academic-value">
-            Information Technology · Business · Data · Artificial Intelligence
-            · Cybersecurity · Environmental Science & Sustainability
-          </div>
+  padding-top: 11px;
+}
 
-        </div>
+.section-heading h2 {
+  font-family: var(--serif);
+  font-weight: 500;
 
+  font-size: clamp(42px, 5vw, 68px);
+  line-height: 1;
 
-        <div class="sub-block">
+  letter-spacing: -0.035em;
+}
 
-          <h3>Academic Background</h3>
 
-          <p>
-            My studies in Computer Management have provided exposure to
-            computer applications, programming, databases, management,
-            and problem-solving. Alongside technology, I have developed
-            an interest in business, data, artificial intelligence,
-            cybersecurity, and environmental science.
-          </p>
+/* ---------- INTRO ---------- */
 
-          <p>
-            Rather than defining myself by a single specialization at this
-            stage, I’m interested in understanding how different fields
-            connect and where those connections can lead.
-          </p>
+.intro {
+  padding: 95px 0;
 
-        </div>
+  display: grid;
+  grid-template-columns: 70px minmax(0, 720px);
+  gap: 0;
+}
 
-      </div>
+.intro-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
 
-    </section>
+.intro-large {
+  font-family: var(--serif);
+  font-size: clamp(29px, 3.3vw, 43px);
+  line-height: 1.22;
+  letter-spacing: -0.025em;
+}
 
+.intro-content p:not(.intro-large) {
+  color: var(--muted);
+}
 
-    <!-- =========================
-         03 SKILLS & STRENGTHS
-    ========================== -->
 
-    <section class="section">
+/* ---------- ABOUT ---------- */
 
-      <div class="section-number">03</div>
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 390px;
+  gap: 90px;
+  align-items: start;
+}
 
-      <div class="section-content">
+.about-text {
+  max-width: 680px;
+}
 
-        <h2>Skills & Strengths</h2>
+.about-text .lead {
+  font-family: var(--serif);
+  font-size: 30px;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
 
+  margin-bottom: 28px;
+}
 
-        <div class="skill-block">
+.about-text > p:not(.lead) {
+  color: var(--muted);
+  margin-bottom: 20px;
+}
 
-          <h3>Academic</h3>
+.interest-line {
+  margin-top: 45px;
 
-          <div class="tags">
-            <span>Computer Management</span>
-            <span>Computer Applications</span>
-            <span>Problem-Solving</span>
-            <span>Logical Thinking</span>
-            <span>Research</span>
-          </div>
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 20px;
 
-          <p>
-            My academic background has developed my foundation in computer
-            applications and programming while strengthening my ability
-            to research, analyze information, and approach problems logically.
-          </p>
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
 
-        </div>
+.interest-line span {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+}
 
+.interest-line div {
+  font-size: 14px;
+  line-height: 1.6;
+}
 
-        <div class="skill-block">
+.photo-frame {
+  overflow: hidden;
+  background: var(--paper-soft);
+}
 
-          <h3>Technical Knowledge</h3>
+.portrait {
+  aspect-ratio: 4 / 5;
+}
 
-          <div class="tags">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>PHP</span>
-            <span>Java</span>
-            <span>Python</span>
-            <span>SQL</span>
-            <span>MySQL</span>
-          </div>
+.photo-frame img {
+  height: 100%;
+  object-fit: cover;
+}
 
-          <p>
-            I have foundational knowledge of programming, web development,
-            and databases. I continue to strengthen these skills through
-            practice, independent learning, and project-based work.
-          </p>
 
-        </div>
+/* ---------- ACADEMIC ---------- */
 
+.academic-layout {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  gap: 100px;
+}
 
-        <div class="skill-block">
+.academic-sidebar {
+  border-top: 1px solid var(--line);
+}
 
-          <h3>Personal</h3>
+.info-item {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+}
 
-          <div class="tags">
-            <span>Curious</span>
-            <span>Responsible</span>
-            <span>Adaptable</span>
-            <span>Creative</span>
-            <span>Willing to Learn</span>
-            <span>Persistent</span>
-          </div>
+.info-item span {
+  display: block;
 
-          <p>
-            I approach unfamiliar situations with curiosity and a willingness
-            to learn. I value persistence, adaptability, and continuous
-            improvement.
-          </p>
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 
-        </div>
+  color: var(--muted);
 
+  margin-bottom: 5px;
+}
 
-        <div class="skill-block">
+.info-item strong {
+  display: block;
 
-          <h3>Communication & Leadership</h3>
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.45;
+}
 
-          <div class="tags">
-            <span>Communication</span>
-            <span>Interpersonal Communication</span>
-            <span>Presentation</span>
-            <span>Teamwork</span>
-            <span>Collaboration</span>
-            <span>Leadership</span>
-          </div>
+.info-item small {
+  display: block;
 
-          <p>
-            Through student activities and collaborative experiences, I have
-            developed greater confidence in communicating ideas, working
-            with different people, taking responsibility, and contributing
-            effectively to a team.
-          </p>
+  font-size: 12px;
+  color: var(--muted);
 
-        </div>
+  line-height: 1.5;
+  margin-top: 4px;
+}
 
+.academic-main {
+  max-width: 690px;
+}
 
-        <div class="sub-block">
+.academic-block {
+  padding-bottom: 55px;
+  margin-bottom: 50px;
 
-          <h3>Certifications & Additional Learning</h3>
+  border-bottom: 1px solid var(--line);
+}
 
+.academic-block:last-child {
+  border-bottom: 0;
+  margin-bottom: 0;
+}
 
-          <div class="learning-item">
+.academic-block h3 {
+  font-family: var(--serif);
+  font-size: 29px;
+  font-weight: 500;
 
-            <h4>Introduction to Cybersecurity Awareness</h4>
+  margin-bottom: 18px;
+}
 
-            <p class="small-meta">
-              HP LIFE & HP Foundation · 2026
-            </p>
+.academic-block p {
+  color: var(--muted);
+}
 
-            <p>
-              Completed introductory learning focused on cybersecurity
-              awareness and digital security concepts.
-            </p>
+.academic-block p + p {
+  margin-top: 20px;
+}
 
-          </div>
+.interest-tags {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--ink) !important;
+}
 
 
-          <div class="learning-item">
+/* ---------- SKILLS ---------- */
 
-            <h4>Professional Networking for Career Growth</h4>
+.skills-list {
+  border-top: 1px solid var(--line);
+}
 
-            <p class="small-meta">
-              HP LIFE & HP Foundation · 2026
-            </p>
+.skill-row {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 70px;
 
-            <p>
-              Completed learning focused on professional networking and
-              career-readiness skills.
-            </p>
+  padding: 38px 0;
 
-          </div>
+  border-bottom: 1px solid var(--line);
+}
 
+.skill-title {
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+}
 
-          <div class="learning-item">
+.skill-title span {
+  font-size: 10px;
+  color: var(--muted);
+}
 
-            <h4>American Spaces Nepal — AI Learning Programs · 2026</h4>
+.skill-title h3 {
+  font-family: var(--serif);
+  font-size: 25px;
+  font-weight: 500;
+}
 
-            <p class="small-meta">
-              U.S. Embassy-supported educational programs
-            </p>
+.skill-content {
+  max-width: 670px;
+}
 
-            <p>
-              Participating in programs and learning sessions exploring
-              artificial intelligence, its applications, and its role in
-              technology and society.
-            </p>
+.skill-tags {
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
 
-          </div>
+.skill-content p {
+  font-size: 14px;
+  color: var(--muted);
+}
 
-        </div>
 
-      </div>
+/* ---------- SUBSECTIONS ---------- */
 
-    </section>
+.subsection {
+  margin-top: 90px;
+}
 
+.subsection-heading {
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
 
-    <!-- =========================
-         04 PROJECTS & TECHNOLOGY
-    ========================== -->
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+}
 
-    <section class="section">
 
-      <div class="section-number">04</div>
+/* ---------- CERTIFICATIONS ---------- */
 
-      <div class="section-content">
+.cert-list {
+  display: flex;
+  flex-direction: column;
+}
 
-        <h2>Projects & Technology</h2>
+.cert {
+  display: grid;
+  grid-template-columns: 65px minmax(0, 1fr);
 
-        <p class="section-lead">
-          I’m interested in technology not only as an academic subject,
-          but also as a practical tool for creating, organizing, and
-          communicating ideas.
-        </p>
+  padding: 32px 0;
 
+  border-bottom: 1px solid var(--line);
+}
 
-        <div class="project">
+.cert-number {
+  font-size: 11px;
+  color: var(--muted);
+}
 
-          <div class="project-number">01</div>
+.cert-content {
+  max-width: 700px;
+}
 
-          <div>
+.cert-content h3 {
+  font-family: var(--serif);
+  font-size: 25px;
+  font-weight: 500;
+}
 
-            <h3>Personal Portfolio Website</h3>
+.cert-meta {
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
 
-            <p>
-              Designed and developed a personal website to bring together
-              my experiences, creative work, projects, skills, and learning
-              journey in one digital space.
-            </p>
+  margin: 5px 0 13px;
+}
 
-            <p class="project-meta">
-              <strong>Technology explored:</strong>
-              HTML · CSS · Web Design
-            </p>
+.cert-content > p:last-child {
+  font-size: 14px;
+  color: var(--muted);
+}
 
-            <p>
-              <strong>What I learned:</strong>
-              The project allowed me to apply technical knowledge to a
-              practical outcome while developing my understanding of website
-              structure, visual design, usability, and digital presentation.
-            </p>
 
-          </div>
+/* ---------- PROJECTS ---------- */
 
-        </div>
+.section-intro {
+  max-width: 700px;
+  margin-left: 70px;
+  margin-bottom: 65px;
+}
 
+.section-intro .lead {
+  font-family: var(--serif);
+  font-size: 29px;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+}
 
-        <div class="project">
+.project-list {
+  border-top: 1px solid var(--line);
+}
 
-          <div class="project-number">02</div>
+.project {
+  display: grid;
+  grid-template-columns: 70px minmax(0, 1fr);
 
-          <div>
+  padding: 45px 0;
 
-            <h3>Personal Archive Website</h3>
+  border-bottom: 1px solid var(--line);
+}
 
-            <p>
-              Developed a separate website to document my experiences,
-              creative work, projects, and learning in greater detail.
-            </p>
+.project-number {
+  font-size: 11px;
+  color: var(--muted);
+}
 
-            <p class="project-meta">
-              <strong>Technology explored:</strong>
-              HTML · CSS · Web Design
-            </p>
+.project-main {
+  max-width: 850px;
+}
 
-            <p>
-              <strong>What I learned:</strong>
-              Building a longer-form digital archive strengthened my
-              understanding of how information, storytelling, organization,
-              and design can work together in a digital environment.
-            </p>
+.project-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  align-items: baseline;
 
-          </div>
+  margin-bottom: 16px;
+}
 
-        </div>
+.project-top h3 {
+  font-family: var(--serif);
+  font-size: 30px;
+  font-weight: 500;
+}
 
+.project-top span {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
 
-        <div class="sub-block">
+  white-space: nowrap;
+}
 
-          <h3>Technical Learning</h3>
+.project-main > p {
+  color: var(--muted);
+}
 
-          <div class="technical-grid">
+.project-learning {
+  margin-top: 28px;
+  padding-left: 20px;
+  border-left: 1px solid var(--line);
+}
 
-            <div>
-              <strong>Web Development</strong>
-              <p>HTML · CSS · PHP</p>
-            </div>
+.project-learning strong {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 500;
+}
 
-            <div>
-              <strong>Programming</strong>
-              <p>Java · Python</p>
-            </div>
+.project-learning p {
+  color: var(--muted);
+  font-size: 14px;
 
-            <div>
-              <strong>Databases</strong>
-              <p>SQL · MySQL</p>
-            </div>
+  margin-top: 7px;
+}
 
-          </div>
+.technical-foundation {
+  margin-top: 75px;
+  padding-top: 25px;
+  border-top: 1px solid var(--line);
+}
 
-          <p>
-            My technical foundation continues to develop, and I look forward
-            to applying these skills through more practical projects and
-            experimentation.
-          </p>
+.small-label {
+  font-size: 10px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
 
-        </div>
+.technical-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
 
-      </div>
+  margin-top: 30px;
+}
 
-    </section>
+.technical-columns h4 {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 500;
+}
 
+.technical-columns p {
+  color: var(--muted);
+  font-size: 14px;
+}
 
-    <!-- =========================
-         05 LEADERSHIP & ACTIVITIES
-    ========================== -->
+.technical-note {
+  margin-top: 35px;
+  max-width: 700px;
 
-    <section class="section">
+  font-size: 14px;
+  color: var(--muted);
+}
 
-      <div class="section-number">05</div>
 
-      <div class="section-content">
+/* ---------- LEADERSHIP / TIMELINE ---------- */
 
-        <h2>Leadership & Activities</h2>
+.timeline {
+  margin-left: 70px;
 
-        <p class="section-lead">
-          My involvement in student activities, particularly Model United
-          Nations, has strengthened my communication, research,
-          collaboration, and leadership abilities.
-        </p>
+  border-top: 1px solid var(--line);
+}
 
+.timeline-item {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: 50px;
 
-        <div class="timeline">
+  padding: 45px 0;
 
+  border-bottom: 1px solid var(--line);
+}
 
-          <div class="timeline-item">
+.timeline-date {
+  font-family: var(--serif);
+  font-size: 22px;
+}
 
-            <div class="timeline-year">2019</div>
+.timeline-content {
+  max-width: 760px;
+}
 
-            <div class="timeline-content">
+.timeline-title h3 {
+  font-family: var(--serif);
+  font-size: 31px;
+  font-weight: 500;
+  line-height: 1.2;
 
-              <h3>Logistics</h3>
+  margin-bottom: 15px;
+}
 
-              <p>
-                Supported the organization and flow of a Model UN conference
-                by preparing cards, assigning groups, communicating
-                information between teams, and assisting with crisis
-                coordination.
-              </p>
+.timeline-content > p {
+  color: var(--muted);
+}
 
-              <p>
-                <strong>What I learned:</strong>
-                This experience introduced me to the importance of
-                coordination, clear communication, and attention to detail
-                in a collaborative environment.
-              </p>
+.learned {
+  margin-top: 27px;
 
-            </div>
+  padding-left: 20px;
+  border-left: 1px solid var(--line);
+}
 
-          </div>
+.learned span,
+.contribution strong {
+  display: block;
 
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 
-          <div class="timeline-item">
+  color: var(--muted);
+}
 
-            <div class="timeline-year">2022</div>
+.learned p,
+.contribution p {
+  margin-top: 6px;
 
-            <div class="timeline-content">
+  font-size: 14px;
+  color: var(--muted);
+}
 
-              <h3>Vice Chair · UNFCCC</h3>
 
-              <p>
-                Chaired a committee focused on climate change, the
-                Sustainable Development Goals, and youth climate action.
-                This experience became an early starting point for my
-                interest in sustainable development and environmental issues.
-              </p>
+/* ---------- GALLERY ---------- */
 
-              <p>
-                <strong>What I learned:</strong>
-                I strengthened my leadership, public speaking, research,
-                and discussion-facilitation skills while gaining a deeper
-                understanding of climate action and youth participation.
-              </p>
+.gallery-section {
+  margin-top: 90px;
+}
 
-            </div>
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr 0.85fr;
+  gap: 18px;
 
-          </div>
+  margin-top: 25px;
+}
 
+.gallery-grid figure {
+  margin: 0;
+}
 
-          <div class="timeline-item">
+.gallery-grid img {
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
 
-            <div class="timeline-year">2023</div>
+  background: var(--paper-soft);
+}
 
-            <div class="timeline-content">
+.gallery-grid figcaption,
+.creative-photo figcaption {
+  padding-top: 10px;
 
-              <h3>Delegate · Commission on the Status of Women</h3>
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.5;
+}
 
-              <p>
-                Researched issues from an assigned country’s perspective
-                and contributed to committee discussions on topics relating
-                to women and society.
-              </p>
 
-              <p>
-                <strong>What I learned:</strong>
-                The experience strengthened my research, communication,
-                perspective-taking, and diplomatic skills.
-              </p>
+/* ---------- COMMUNITY ---------- */
 
-            </div>
+.community-list {
+  margin-left: 70px;
 
-          </div>
+  border-top: 1px solid var(--line);
+}
 
-        </div>
+.community-item {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 50px;
 
+  padding: 42px 0;
 
-        <div class="gallery-section">
+  border-bottom: 1px solid var(--line);
+}
 
-          <h3>MUN Gallery</h3>
+.community-label {
+  font-size: 10px;
+  letter-spacing: 0.13em;
+  color: var(--muted);
+}
 
-          <div class="gallery">
+.community-item h3 {
+  font-family: var(--serif);
+  font-size: 29px;
+  font-weight: 500;
 
-            <figure>
-              <div class="photo-placeholder">
-                GROUP PHOTO
-              </div>
-              <figcaption>
-                With my committee/group during Model United Nations
-              </figcaption>
-            </figure>
+  margin-bottom: 7px;
+}
 
+.organization {
+  font-size: 11px !important;
+  color: var(--muted);
+  margin-bottom: 15px;
+}
 
-            <figure>
-              <div class="photo-placeholder">
-                TOKEN OF LOVE
-              </div>
-              <figcaption>
-                A Token of Love received from my school
-              </figcaption>
-            </figure>
+.community-item > div > p:not(.organization) {
+  color: var(--muted);
+  max-width: 720px;
+}
 
+.contribution {
+  margin-top: 25px;
 
-            <figure>
-              <div class="photo-placeholder">
-                ADDITIONAL MUN PHOTO
-              </div>
-              <figcaption>
-                Model United Nations
-              </figcaption>
-            </figure>
+  padding-left: 20px;
+  border-left: 1px solid var(--line);
+}
 
-          </div>
 
-        </div>
+/* ---------- CREATIVE ---------- */
 
-      </div>
+.creative-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 85px;
 
-    </section>
+  align-items: start;
+}
 
+.creative-text {
+  max-width: 570px;
+}
 
-    <!-- =========================
-         06 COMMUNITY SERVICE
-    ========================== -->
+.creative-block {
+  padding: 28px 0;
 
-    <section class="section">
+  border-top: 1px solid var(--line);
+}
 
-      <div class="section-number">06</div>
+.creative-block:last-child {
+  border-bottom: 1px solid var(--line);
+}
 
-      <div class="section-content">
+.creative-block p {
+  margin-top: 13px;
+  color: var(--muted);
+}
 
-        <h2>Community Service</h2>
+.creative-images {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 15px;
+  align-items: end;
+}
 
-        <p class="section-lead">
-          Community involvement has given me opportunities to contribute
-          beyond the classroom while developing a greater awareness of
-          social and environmental issues.
-        </p>
+.creative-photo img {
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  background: var(--paper-soft);
+}
 
+.large-photo img {
+  aspect-ratio: 4 / 5.4;
+}
 
-        <div class="service-item">
 
-          <h3>Bagmati River Clean-Up Campaign</h3>
+/* ---------- EXPLORING ---------- */
 
-          <p class="small-meta">
-            Malpi Outreach Program (MOP) · Student-led community initiative
-          </p>
+.exploring-list {
+  margin-left: 70px;
 
-          <p>
-            Participated in a community environmental campaign focused on
-            cleaning the Bagmati River area and promoting environmental
-            responsibility.
-          </p>
+  border-top: 1px solid var(--line);
+}
 
-          <p>
-            <strong>My contribution:</strong>
-            Participated in clean-up activities and worked alongside other
-            volunteers as part of the community initiative.
-          </p>
+.exploring-item {
+  display: grid;
+  grid-template-columns: 60px minmax(0, 1fr);
+  gap: 25px;
 
-        </div>
+  padding: 30px 0;
 
+  border-bottom: 1px solid var(--line);
+}
 
-        <div class="service-item">
+.exploring-item > span {
+  font-size: 10px;
+  color: var(--muted);
+}
 
-          <h3>Cancer Awareness Cycling Rally</h3>
+.exploring-item h3 {
+  font-family: var(--serif);
+  font-size: 27px;
+  font-weight: 500;
 
-          <p>
-            Volunteered as a cyclist in a cancer awareness campaign,
-            contributing to a public awareness initiative through active
-            participation.
-          </p>
+  margin-bottom: 4px;
+}
 
-        </div>
+.exploring-item p {
+  font-size: 14px;
+  color: var(--muted);
+  max-width: 680px;
+}
 
 
-        <div class="service-item">
+/* ---------- ARCHIVE ---------- */
 
-          <h3>Preschool Volunteering</h3>
+.archive {
+  background: var(--bg-deep);
 
-          <p>
-            Worked with young children through activities involving
-            learning, music, art, and everyday routines.
-          </p>
+  padding: 120px 0;
+}
 
-        </div>
+.archive-inner {
+  width: min(var(--page-width), calc(100% - 80px));
+  margin: auto;
+}
 
-      </div>
+.archive h2 {
+  font-family: var(--serif);
+  font-size: clamp(45px, 6vw, 78px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.04em;
 
-    </section>
+  margin: 25px 0 35px;
+}
 
+.archive p {
+  max-width: 570px;
 
-    <!-- =========================
-         07 CREATIVE WORK
-    ========================== -->
+  color: #444a3d;
+}
 
-    <section class="section">
+.archive-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
 
-      <div class="section-number">07</div>
+  margin-top: 38px;
+  padding-bottom: 6px;
 
-      <div class="section-content">
+  border-bottom: 1px solid var(--ink);
 
-        <h2>Creative Work</h2>
+  font-size: 13px;
+  letter-spacing: 0.04em;
+}
 
-        <p class="section-lead">
-          Creativity is an important part of how I explore ideas, develop
-          patience through practice, and express myself.
-        </p>
+.archive-link span {
+  font-size: 20px;
+  transition: transform 0.2s ease;
+}
 
+.archive-link:hover span {
+  transform: translateX(5px);
+}
 
-        <div class="creative-grid">
 
-          <div class="creative-text">
+/* ---------- FOOTER ---------- */
 
-            <h3>Visual Art</h3>
+footer {
+  background: var(--ink);
+  color: var(--paper);
 
-            <p>
-              I have explored acrylic painting, mandala art, and
-              architectural models, using different forms of visual work
-              to experiment with design, structure, and creative expression.
-            </p>
+  padding: 65px 0 30px;
+}
 
-          </div>
+.footer-top,
+.footer-bottom {
+  width: min(var(--page-width), calc(100% - 80px));
+  margin: auto;
+}
 
-          <div class="creative-photo">
-            ART PHOTO
-          </div>
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
 
+  padding-bottom: 55px;
+}
 
-          <div class="creative-text">
+.footer-name {
+  font-family: var(--serif);
+  font-size: 32px;
+}
 
-            <h3>Music</h3>
+.footer-top p {
+  color: #aaaE9f;
+  font-size: 13px;
+  margin-top: 5px;
+}
 
-            <p>
-              I enjoy singing and have been learning guitar and harmonica.
-              Music has become an ongoing way for me to develop through
-              practice, experimentation, and consistency.
-            </p>
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
 
-          </div>
+.footer-contact span {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 
-          <div class="creative-photo">
-            MUSIC PHOTO
-          </div>
+  color: #9fa397;
+}
 
-        </div>
+.footer-contact a {
+  margin-top: 5px;
+  font-size: 13px;
+}
 
+.footer-bottom {
+  border-top: 1px solid rgba(244, 240, 230, 0.18);
 
-        <p class="also-explored">
-          <strong>Also explored:</strong>
-          Dance · Creative Writing
-        </p>
+  padding-top: 20px;
 
-      </div>
+  display: flex;
+  justify-content: space-between;
 
-    </section>
+  color: #8e9388;
 
+  font-size: 10px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
 
-    <!-- =========================
-         08 AREAS I'M EXPLORING
-    ========================== -->
 
-    <section class="section">
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
 
-      <div class="section-number">08</div>
+@media (max-width: 950px) {
 
-      <div class="section-content">
+  .nav-links {
+    gap: 16px;
+  }
 
-        <h2>Areas I’m Exploring</h2>
+  .nav-links a:nth-child(5),
+  .nav-links a:nth-child(6) {
+    display: none;
+  }
 
-        <p class="section-lead">
-          My interests currently span several areas that I’m interested
-          in understanding more deeply.
-        </p>
+  .about-grid {
+    grid-template-columns: 1fr 300px;
+    gap: 50px;
+  }
 
+  .academic-layout {
+    grid-template-columns: 250px 1fr;
+    gap: 55px;
+  }
 
-        <div class="exploration-grid">
+  .skill-row {
+    grid-template-columns: 220px 1fr;
+    gap: 35px;
+  }
 
-          <div class="exploration-item">
+  .creative-grid {
+    gap: 45px;
+  }
 
-            <span class="exploration-number">01</span>
+}
 
-            <h3>Technology</h3>
 
-            <p>
-              Exploring programming, web development, digital tools,
-              and the use of technology to create practical solutions.
-            </p>
+/* ---------- TABLET ---------- */
 
-          </div>
+@media (max-width: 720px) {
 
+  .nav {
+    width: min(var(--page-width), calc(100% - 40px));
+    min-height: 64px;
+  }
 
-          <div class="exploration-item">
+  .nav-links {
+    display: none;
+  }
 
-            <span class="exploration-number">02</span>
+  .nav-contact {
+    display: block;
+  }
 
-            <h3>Data & Artificial Intelligence</h3>
+  .hero-inner,
+  .section,
+  .intro,
+  .archive-inner,
+  .footer-top,
+  .footer-bottom {
+    width: calc(100% - 40px);
+  }
 
-            <p>
-              Interested in how data and AI can be used to understand
-              information, identify patterns, and support problem-solving.
-            </p>
+  .hero-inner {
+    padding: 80px 0 65px;
+  }
 
-          </div>
+  .hero {
+    min-height: auto;
+  }
 
+  .hero h1 {
+    font-size: clamp(49px, 14vw, 76px);
+  }
 
-          <div class="exploration-item">
+  .hero-bottom {
+    grid-template-columns: 1fr;
+    gap: 30px;
 
-            <span class="exploration-number">03</span>
+    margin-top: 60px;
+  }
 
-            <h3>Cybersecurity</h3>
+  .hero-location {
+    text-align: left;
+  }
 
-            <p>
-              Interested in how digital systems, information, and users
-              can be protected in an increasingly connected world.
-            </p>
+  .section {
+    padding: 80px 0;
+  }
 
-          </div>
+  .intro {
+    padding: 70px 0;
 
+    grid-template-columns: 1fr;
+  }
 
-          <div class="exploration-item">
+  .intro .section-number {
+    margin-bottom: 20px;
+  }
 
-            <span class="exploration-number">04</span>
+  .section-heading {
+    grid-template-columns: 45px 1fr;
+    margin-bottom: 45px;
+  }
 
-            <h3>Business & Data Analytics</h3>
+  .section-heading h2 {
+    font-size: 45px;
+  }
 
-            <p>
-              Exploring the relationship between technology, business,
-              data, and informed decision-making.
-            </p>
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
 
-          </div>
+  .portrait {
+    max-width: 380px;
+  }
 
+  .academic-layout {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
 
-          <div class="exploration-item">
+  .academic-sidebar {
+    max-width: 500px;
+  }
 
-            <span class="exploration-number">05</span>
+  .skill-row {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 30px 0;
+  }
 
-            <h3>Environmental Science & Sustainability</h3>
+  .skill-title {
+    margin-bottom: 5px;
+  }
 
-            <p>
-              Interested in environmental issues, climate action,
-              and approaches to sustainable development.
-            </p>
+  .section-intro {
+    margin-left: 0;
+    margin-bottom: 45px;
+  }
 
-          </div>
+  .section-intro .lead {
+    font-size: 25px;
+  }
 
-        </div>
+  .project {
+    grid-template-columns: 45px 1fr;
+  }
 
-      </div>
+  .project-top {
+    display: block;
+  }
 
-    </section>
+  .project-top span {
+    display: block;
+    margin-top: 7px;
+  }
 
+  .technical-columns {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
 
-    <!-- =========================
-         ARCHIVE
-    ========================== -->
+  .timeline,
+  .community-list,
+  .exploring-list {
+    margin-left: 0;
+  }
 
-    <section class="archive-section">
+  .timeline-item {
+    grid-template-columns: 70px 1fr;
+    gap: 25px;
+  }
 
-      <div class="archive-inner">
+  .timeline-title h3 {
+    font-size: 26px;
+  }
 
-        <p class="eyebrow">BEYOND THIS PAGE</p>
+  .community-item {
+    grid-template-columns: 100px 1fr;
+    gap: 25px;
+  }
 
-        <h2>Explore Beyond This Page</h2>
+  .community-item h3 {
+    font-size: 26px;
+  }
 
-        <p>
-          There is always more behind a summary.
-        </p>
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 
-        <p>
-          For a deeper look at the experiences, creative work, and projects
-          that have shaped my journey, I’ve kept a Personal Archive with
-          additional stories, documentation, and details.
-        </p>
+  .gallery-grid figure:first-child {
+    grid-column: 1 / -1;
+  }
 
-        <!-- Replace # with your Personal Archive website URL -->
-        <a href="#" class="archive-link">
-          View Personal Archive →
-        </a>
+  .creative-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
 
-      </div>
+  .creative-images {
+    max-width: 650px;
+  }
 
-    </section>
+  .exploring-item {
+    grid-template-columns: 40px 1fr;
+    gap: 15px;
+  }
 
-  </main>
+  .archive {
+    padding: 85px 0;
+  }
 
+  .footer-top {
+    flex-direction: column;
+  }
 
-  <!-- =========================
-       FOOTER
-  ========================== -->
+  .footer-contact {
+    align-items: flex-start;
+  }
 
-  <footer>
+}
 
-    <div class="footer-name">
-      PRAJINA SHAKYA
-    </div>
 
-    <div class="footer-details">
-      Kathmandu, Nepal<br>
-      Email:
-      <span>[YOUR EMAIL]</span><br>
-      2026
-    </div>
+/* ---------- SMALL PHONE ---------- */
 
-  </footer>
+@media (max-width: 480px) {
 
+  body {
+    font-size: 15px;
+  }
 
-</body>
-</html>
+  .nav {
+    width: calc(100% - 28px);
+  }
+
+  .hero-inner,
+  .section,
+  .intro,
+  .archive-inner,
+  .footer-top,
+  .footer-bottom {
+    width: calc(100% - 28px);
+  }
+
+  .hero-inner {
+    padding: 65px 0 55px;
+  }
+
+  .hero-label {
+    margin-bottom: 25px;
+  }
+
+  .hero h1 {
+    font-size: 50px;
+  }
+
+  .hero-bottom {
+    margin-top: 48px;
+  }
+
+  .section {
+    padding: 65px 0;
+  }
+
+  .section-heading {
+    margin-bottom: 35px;
+  }
+
+  .section-heading h2 {
+    font-size: 39px;
+  }
+
+  .intro {
+    padding: 60px 0;
+  }
+
+  .intro-large {
+    font-size: 29px;
+  }
+
+  .about-text .lead {
+    font-size: 27px;
+  }
+
+  .interest-line {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .cert {
+    grid-template-columns: 42px 1fr;
+  }
+
+  .cert-content h3 {
+    font-size: 22px;
+  }
+
+  .project {
+    grid-template-columns: 35px 1fr;
+    padding: 35px 0;
+  }
+
+  .project-top h3 {
+    font-size: 26px;
+  }
+
+  .timeline-item {
+    grid-template-columns: 55px 1fr;
+    gap: 15px;
+    padding: 35px 0;
+  }
+
+  .timeline-date {
+    font-size: 18px;
+  }
+
+  .community-item {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid figure:first-child {
+    grid-column: auto;
+  }
+
+  .creative-images {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .archive h2 {
+    font-size: 47px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 7px;
+  }
+
+}
